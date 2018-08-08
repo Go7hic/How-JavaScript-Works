@@ -5,7 +5,7 @@
 
 在第三篇文章中, 我们将讨论另外一个越来越被开发人员忽视的主题，原因是应用于日常基础内存管理的程序语言越来越成熟和复杂。我们也将会在 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=blog&utm_content=Post-3-v8-intro) 提供一些关于如何处理 JavaScript 内存泄漏的建议，我们需要确认 SessionStack 不会导致内存泄漏，或者不会增加我们集成的 web 应用程序的消耗。
 
-#### 概览
+#### 概述
 
 例如，像 C 这样的编程语言，有 `malloc()` 和 `free()` 这样的基础内存管理函数。开发人员可以使用这些函数来显式分配和释放操作系统的内存。
 

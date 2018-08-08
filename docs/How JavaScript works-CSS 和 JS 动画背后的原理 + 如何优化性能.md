@@ -2,7 +2,7 @@
 
 这是专门探索 JavaScript 及其构建组件系列的第 13 篇文章。在识别和描述核心元素的过程中，我们还分享了构建 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=blog&utm_content=js-series-networking-layer-intro) 时的一些经验法则，SessionStack 是一个足够强大且高性能的 JavaScript 应用程序，用来帮助用户实时查看和重现其 Web 应用程序的缺陷。
 
-### 概览
+### 概述
 
 你也知道，动画在创造吸引人的 web app 中扮演着重要的角色。随着用户越来越多地将注意力转移到用户体验上，商家也开始意识到完美、愉悦的用户体验的重要性，web app 变得更加重要，并且 UI 更趋于动效。这一切都需要更复杂的动画，以便在用户使用中实现更平滑的状态转换。今天，这甚至不被认为是特别的。用户正在变得越来越挑剔，默认期望高效响应和互动的用户界面。
 

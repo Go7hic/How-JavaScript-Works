@@ -8,7 +8,7 @@ web 应用正在持续的越来越侧重客户端，这是由很多原因造成�
 
 而当你在搭建某些框架或者库的时候，甚至会更加困难，例如，前者需要根据 DOM 来作出反应并执行特定的动作。
 
-### 概览
+### 概述
 
 [MutationObserver](https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver) 是一个现代浏览器提供的 Web API，用于检测 DOM 的变化。借助这个 API，可以监听到节点的新增或移除，节点的属性变化或者字符节点的字符内容变化。
 

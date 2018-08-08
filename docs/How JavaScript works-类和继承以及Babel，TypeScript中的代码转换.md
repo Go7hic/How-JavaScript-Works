@@ -1,4 +1,4 @@
-# JavaScript 是如何工作的: 类和继承在Babel，TypeScript中的转换
+# JavaScript 是如何工作的: 类和继承以及Babel，TypeScript中的代码转换
 
 ![](media/15332846510823/15335261847888.jpg)
 

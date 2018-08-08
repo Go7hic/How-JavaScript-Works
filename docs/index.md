@@ -17,7 +17,7 @@
 - 12. JavaScript 是如何工作的：深入网络层以及如何优化它的性能和安全性
 - 13. JavaScript 是如何工作的：CSS 和 JS 动画背后的原理 + 如何优化性能
 - 14. JavaScript 是如何工作的：解析，语法抽象树及最小化解析时间的 5 条小技巧
-- 15. JavaScript 是如何工作的： 类和继承在Babel，TypeScript中的转换
+- 15. JavaScript 是如何工作的： 类和继承以及Babel，TypeScript中的代码转换
 - 16. JavaScript 是如何工作的：存储引擎+如何选择合适的存储API
 - 17. JavaScript 是如何工作的：Shadow DOM的内部结构+如何构建自包含的组件
 - 18. JavaScript 是如何工作的：WebRTC 和点对点网络机制

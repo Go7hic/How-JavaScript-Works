@@ -2,7 +2,7 @@
 
 这是专门探索 JavaScript 及其构建组件的系列的第八个。在识别和描述核心元素的过程中，我们也分享了一些我们在构建 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=source&utm_content=javascript-series-web-workers-intro) 时的最佳实践。SessionStack 是一个强大且性能卓越的 JavaScript 应用程序，可以向你实时显示用户在 Web 应用程序中遇到技术问题或用户体验问题时的具体情况。
 
-#### 概览
+#### 概述
 
 如果你想了解 Service Worker 的一切内容，你应该从阅读我们博客上，关于 [Web Workers](https://blog.sessionstack.com/how-javascript-works-the-building-blocks-of-web-workers-5-cases-when-you-should-use-them-a547c0757f6a) 的文章开始。
 
