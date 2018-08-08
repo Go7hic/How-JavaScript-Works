@@ -41,7 +41,7 @@ Web 推送通知允许用户在 Web 应用程序中选择接收更新信息，�
 
 两种检查看起来都是这样的：
 
-```
+```js
 if (!('serviceWorker' in navigator)) { 
   // Service Worker isn't supported on this browser, disable or hide UI. 
   return; 
@@ -67,7 +67,7 @@ if (!('PushManager' in window)) {
 
 看起来是这样的：
 
-```
+```js
 function requestPermission() {
   return new Promise(function(resolve, reject) {
     const permissionResult = Notification.requestPermission(function(result) {
@@ -101,7 +101,7 @@ function requestPermission() {
 
 整个片段可能如下所示（包括 Service Workder 注册）：
 
-```
+```js
 function subscribeUserToPush() {
   return navigator.serviceWorker.register('service-worker.js')
   .then(function(registration) {
@@ -144,7 +144,7 @@ function subscribeUserToPush() {
 
 `PushSubscription` 包含用户设备发送推送消息所需的所有信息。就像这样： 
 
-```
+```js
 {
   "endpoint": "https://domain.pushservice.com/some-id",
   "keys": {
@@ -212,7 +212,7 @@ function subscribeUserToPush() {
 
 设置推送事件监听器的代码应该与用 JavaScript 编写的任何其他事件监听器类似：
 
-```
+```js
 self.addEventListener('push', function(event) {
   if (event.data) {
     console.log('This push event has data: ', event.data.text());
@@ -228,7 +228,7 @@ self.addEventListener('push', function(event) {
 
 这里是处理 `push` 事件的例子：
 
-```
+```js
 self.addEventListener('push', function(event) {
   var promise = self.registration.showNotification('Push notification!');
 
@@ -240,7 +240,7 @@ self.addEventListener('push', function(event) {
 
 `showNotification(title, options)` 方法可以在视觉上进行调整以适应你的需求。`title` 参数是一个 `string`，而 options 是一个看起来像这样的对象：
 
-```
+```js
 {
   "//": "Visual Options",
   "body": "<String>",

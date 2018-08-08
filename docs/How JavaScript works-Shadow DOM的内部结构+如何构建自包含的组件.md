@@ -1,6 +1,6 @@
 # JavaScript 是如何工作的: Shadow DOM的内部结构+如何构建自包含的组件
 
-![](media/15324122760389/15324123119848.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*66kSmyuCNeD7Oiaq)
 这是专门探索JavaScript及其构建组件的系列文章的第17篇。 在识别和描述核心元素的过程中，我们还分享了一些我们在构建SessionStack时使用的经验法则，这是一个JavaScript应用程序，需要强大且高性能，以帮助用户实时查看和重现其Web应用程序缺陷。
 
 #### 概述
@@ -105,7 +105,7 @@ document.body.appendChild(templateContent);
 ```
 
 到目前为止，还有其他技术可以实现类似的行为，但正如前面提到的那样，将本机覆盖在内是非常好的。 它也有相当不错的浏览器支持：
-![](media/15324122760389/15324156373324.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*3SRCEtv7rMhWpB5s)
 
 模板本身很有用，但它们使用自定义元素可以更好地工作。 我们将在本系列的另一篇文章中定义自定义元素，暂时您应该知道浏览器中的`customElement` API允许您使用自定义渲染定义自己的标记。
 让我们定义一个Web组件，它使用我们的模板作为其shadow DOM的内容。 我们称之为<my-paragraph>：
@@ -414,7 +414,7 @@ container.dispatchEvent(new Event('containerchanged', {bubbles: true, composed: 
 ```js
 const supportsShadowDOMV1 = !!HTMLElement.prototype.attachShadow;
 ```
-![](media/15324122760389/15330313379242.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*k0vSOmvdDkRJzcpW)
 
 通常，Shadow DOM的行为方式与DOM完全不同。 我们从SessionStack库的经验中得到了第一手的例子。 我们的库集成到Web应用程序中以收集用户事件，网络数据，异常，调试消息，DOM更改等数据，并将此数据发送到我们的服务器。
 

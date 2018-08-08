@@ -6,7 +6,7 @@
 
 这一次我们将剖析 Web Worker：对它进行简单概述后，我们将分别讨论不同类型的 Worker 以及它们内部组件的运作方法，同时也会以场景为例说明它们各自的优缺点。在文章的最后，我们将讲解最适合使用 Web Worker 的 5 个场景。
 
-我们在 [之前的文章](https://juejin.im/post/5a522647518825732d7f6cbb) 中已经详尽地讨论了 JavaScript 的单线程运行机制，对此你应当已经了然于胸。然而，JavaScript 是允许开发者在单线程模型上书写异步代码的。
+我们在之前的文章中已经详尽地讨论了 JavaScript 的单线程运行机制，对此你应当已经了然于胸。然而，JavaScript 是允许开发者在单线程模型上书写异步代码的。
 
 #### 异步编程的 “天花板”
 
@@ -16,7 +16,7 @@
 
 AJAX 请求是异步编程的最佳实践之一。通常网络请求不会在短时间内得到响应，因此异步的网络请求能让客户端在等待响应结果的同时执行其他业务代码。
 
-```
+```js
 // 假设你使用了 jQuery
 jQuery.ajax({
     url: 'https://api.example.com/endpoint',
@@ -28,7 +28,7 @@ jQuery.ajax({
 
 当然这里有个问题，上例能够进行异步请求是依靠了浏览器提供的 API，其他代码又该如何实现异步执行呢？例如，在上例 success 回调函数中存在 CPU 密集型计算：
 
-```
+```js
 
 var result = performCPUIntensiveCalculation();
 ```
@@ -41,7 +41,7 @@ var result = performCPUIntensiveCalculation();
 
 让我们来看一个简单的计算数组均值的函数：
 
-```
+```js
 
 function average(numbers) {
     var len = numbers.length,
@@ -62,7 +62,7 @@ function average(numbers) {
 
 下面是对上方代码的一个重写，使其获得了异步性：
 
-```
+```js
 function averageAsync(numbers, callback) {
     var len = numbers.length,
         sum = 0;
@@ -159,7 +159,7 @@ Web Worker 是运行在浏览器内部的一条独立线程，因此需要使用
 
 让我们看看，如何创建一个基础 Worker：
 
-```
+```js
 var worker = new Worker('task.js');
 ```
 
@@ -168,7 +168,7 @@ var worker = new Worker('task.js');
 
 为了启动创建好的 Worker，你需要显式地调用 `postMessage` 方法：
 
-```
+```js
 worker.postMessage();
 ```
 
@@ -184,7 +184,7 @@ worker.postMessage();
 
 让我们看看下面的 HTML 页面（或者准确地说是片段）：
 
-```
+```js
 <button onclick="startComputation()">Start computation</button>
 
 <script>
@@ -201,7 +201,7 @@ worker.postMessage();
 
 这部分则是 Worker 脚本中的内容：
 
-```
+```js
 self.addEventListener('message', function(e) {
   var data = e.data;
   switch (data.cmd) {
@@ -227,7 +227,7 @@ self.addEventListener('message', function(e) {
 
 [Broadcast Channel](https://developer.mozilla.org/en-US/docs/Web/API/BroadcastChannel) 是更纯粹地为通信而生的 API。它允许我们在同域下的所有的上下文中发送和接收消息，包括浏览器 tab、iframe 和 Worker：
 
-```
+```js
 // 创建一个到 Broadcast Channel 的连接
 var bc = new BroadcastChannel('test_channel');
 
@@ -292,7 +292,7 @@ bc.close()
 
 这有一个例子：
 
-```
+```js
 function onError(e) {
   console.log('Line: ' + e.lineno);
   console.log('In: ' + e.filename);

@@ -1,6 +1,6 @@
 # JavaScript 是如何工作的: 在自定义元素的引擎下，构建可重用组件的最佳实践
 
-![](media/15335456893446/15335457574971.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*2oRILfJJtmW07mbK)
 这是专门探索JavaScript及其构建组件的系列文章的第19篇。 在识别和描述核心元素的过程中，我们还分享了一些我们在构建SessionStack时使用的经验法则，这是一个JavaScript应用程序，需要强大且高性能，以帮助用户实时查看和重现其Web应用程序缺陷。
 
 #### 概述
@@ -73,7 +73,7 @@ customElements.define('my-custom-element', class extends HTMLElement {
 使用这种结构，因为它使浏览器按原样呈现页面。 但是，它使HTML不可读并且很难维护。
 
 例如，我们可能有一个看起来像这样的组件
-![](media/15335456893446/15335510265806.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*v56OyrPtg_cZzzaZ)
 
 传统上，HTML可能如下所示。
 ```html

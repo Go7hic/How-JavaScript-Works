@@ -1,6 +1,6 @@
 # JavaScript 是如何工作的: WebRTC 和点对点网络机制
 
-![](media/15319280545803/15319281066462.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*iWlF5x7BVj1vh5Lu)
 这是专门探索JavaScript及其构建组件的系列文章的第18篇。 在识别和描述核心元素的过程中，我们还分享了一些我们在构建SessionStack时使用的经验法则，这是一个JavaScript应用程序，需要强大且高性能，以帮助用户实时查看和重现其Web应用程序缺陷。
 
 #### 概述
@@ -52,7 +52,7 @@ WebRTC标准未指定信令，并且其API未实现，以便允许使用的技�
 尝试与另一个对等体通信的任何对等体（即，WebRTC利用应用程序）生成一组交互式连接建立协议（ICE）候选者。 候选者代表要使用的IP地址，端口和传输协议的给定组合。 请注意，单台计算机可能具有多个网络接口（无线，有线等），因此可以为每个接口分配多个IP地址。
 
 以下是MDN描绘此交换的图表。
-![](media/15319280545803/15323280265310.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*SXRTlnVxy2-hE9ZX)
 
 
 #### 连接建立
@@ -135,7 +135,7 @@ RTCPeerConnection接口表示本地计算机与远程对等方之间的WebRTC连
 
 下面是一个WebRTC架构图，显示了RTCPeerConnection的作用：
 
-![](media/15319280545803/15323315617112.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*Nm9r_NLcAhJernmo)
 
 从JavaScript的角度来看，从这个图中可以理解的主要内容是，RTCPeerConnection为Web开发人员提供了来自下方复杂内部的复杂性的抽象。 WebRTC使用的编解码器和协议可以进行大量工作，即使在不可靠的网络上也可以进行实时通信：
 
@@ -208,11 +208,11 @@ ICE使用STUN协议及其扩展TURN来使RTCPeerConnection能够应对NAT遍历�
 
 如前所述，ICE是用于连接对等体的协议，例如两个视频聊天客户端。 最初，ICE尝试通过UDP直接连接对等端，以尽可能低的延迟。 在此过程中，STUN服务器只有一个任务：使NAT后面的对等体能够找到其公共地址和端口。 您可以查看这个可用的STUN服务器列表（Google也有几个）。
 
-![](media/15319280545803/15323399098583.jpg)
+![](https://cdn-images-1.medium.com/max/1600/1*ONNxJHqmMTXB1Nuq3qTNXQ.png)
 
 #### 寻找连接候选人
 如果UDP失败，ICE会尝试TCP：首先是HTTP，然后是HTTPS。 如果直接连接失败 - 特别是由于企业NAT遍历和防火墙 - ICE使用中间（中继）TURN服务器。 换句话说，ICE将首先使用带有UDP的STUN直接连接对等体，如果失败，将返回到TURN中继服务器。 “查找候选者”这一表达指的是查找网络接口和端口的过程。
-![](media/15319280545803/15324111899550.jpg)
+![](https://cdn-images-1.medium.com/max/1600/1*0REL14sYPR34hY7yua6-PA.png)
 
 #### Security
 实时通信应用程序或插件有多种方式可能会危及安全性。 例如：

@@ -26,7 +26,7 @@ WebAssembly 在浏览器中加载速度更快，因为只需通过互联网传�
 
 更好的是，它与浏览器无关 —— 目前所有主要引擎都增加了对 WebAssembly 的支持，并且执行时间相近。
 
-为了理解 WebAssembly 与 JavaScript 相比执行得有多快，你应该首先阅读[我们关于 JavaScript 引擎的文章](https://juejin.im/post/5a102e656fb9a044fd1158c6)。
+为了理解 WebAssembly 与 JavaScript 相比执行得有多快，你应该首先阅读我们关于 JavaScript 引擎的文章
 
 我们来看看大概看看 V8 中会发生什么：
 
@@ -68,7 +68,7 @@ WebAssembly 可信和不可信状态。
 
 WebAssembly 采用完全不同的模型。执行栈与 WebAssembly 程序本身是分开的，因此你无法修改栈变量等内容。而且，函数中使用整数偏移而不是指针。函数指向一个间接函数表。然后通过这些计算出的直接数字跳转到模块内部的函数中。这种设计方式使得你可以加载多个 wasm 模块，并排排列，平移所有的索引，互不影响。
 
-有关 JavaScript 中内存模型和管理的更多信息，可以查看我们非常详细的[关于此主题的文章](https://juejin.im/post/5a2559ae6fb9a044fe4634ba)。
+有关 JavaScript 中内存模型和管理的更多信息，可以查看我们非常详细的[关于此主题的文章](https://github.com/fe-doc/How-JavaScript-Works/blob/8447138c874e738467eef73506b30b3e7c4bee33/docs/How%20JavaScript%20works-%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86%20+%20%E5%A4%84%E7%90%86%E5%B8%B8%E8%A7%81%E7%9A%84%204%20%E7%A7%8D%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F.md)。
 
 #### 垃圾回收
 
@@ -104,7 +104,7 @@ WebAssembly 目前不支持源码映射，因为暂时没有规范，但最终�
 
 #### 多线程
 
-JavaScript 在单线程上运行。有很多方法可以发挥事件循环和异步编程优势，详见[我们关于该主题的文章](https://juejin.im/post/5a221d35f265da43356291cc)。
+JavaScript 在单线程上运行。有很多方法可以发挥事件循环和异步编程优势，详见[我们关于该主题的文章](https://github.com/fe-doc/How-JavaScript-Works/blob/8447138c874e738467eef73506b30b3e7c4bee33/docs/How%20JavaScript%20works-%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF%E5%92%8C%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B%E7%9A%84%E5%B4%9B%E8%B5%B7%20+%205%E4%B8%AA%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%BF%E7%94%A8%20async:await%20%E7%BC%96%E7%A0%81%E7%9A%84%E6%8A%80%E5%B7%A7.md)。
 
 JavaScript 也使用 Web Workers，但他们有一个非常具体的用例 —— 基本上，阻止主 UI 线程的任何重 CPU 计算都可以从 Web Worker 中受益。但是 Web Workers 无法访问 DOM。
 

@@ -28,7 +28,7 @@ web 应用正在持续的越来越侧重客户端，这是由很多原因造成�
 
 将 `MutationObserver` 应用于你的应用相当简单。你需要通过传入一个函数来创建一个 `MutationObserver` 实例，每当有变化发生，这个函数将会被调用。函数的第一个参数是一个批次内所有的变化（mutation）的集合。每个变化都会提供它的类型和已经发生的变化的信息。
 
-```
+```js
 var mutationObserver = new MutationObserver(function(mutations) {
   mutations.forEach(function(mutation) {
     console.log(mutation);
@@ -44,7 +44,7 @@ var mutationObserver = new MutationObserver(function(mutations) {
 
 下面这个代码片段展示了如何开始观察：
 
-```
+```js
 // 开始监听页面中根 HTML 元素中的变化。
 mutationObserver.observe(document.documentElement, {
   attributes: true,
@@ -76,7 +76,7 @@ $("#sample-div").removeAttr("class");
 
 最后，为了在任务结束后停止对 DOM 的观察，你可以这样做：
 
-```
+```js
 // 停止 MutationObserver 对变化的监听。
 mutationObserver.disconnect();
 ```
@@ -119,7 +119,7 @@ mutationObserver.disconnect();
 
 为了得到节点插入的处理器，我们需要设置一系列的 [keyframe](https://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp) 动画，当节点插入的时候，动画将会开始。
 
-```
+```css
 @keyframes nodeInserted { 
  from { opacity: 0.99; }
  to { opacity: 1; } 
@@ -128,7 +128,7 @@ mutationObserver.disconnect();
 
 keyframes 已经创建，动画还需要被应用于你想要监听的元素。注意应设置很小的 duration 值 —— 它们将会减弱动画在浏览器上留下的痕迹：
 
-```
+```css
 #container-element * {
  animation-duration: 0.001s;
  animation-name: nodeInserted;
@@ -139,7 +139,7 @@ keyframes 已经创建，动画还需要被应用于你想要监听的元素。�
 
 我们需要一个作为事件监听者的 JavaScript 方法。在方法内部，必须确保初始的 `event.animationName` 检测是我们想要的那个动画。
 
-```
+```js
 var insertionListener = function(event) {
   // 确保这是我们想要的那个动画。
   if (event.animationName === "nodeInserted") {
@@ -150,7 +150,7 @@ var insertionListener = function(event) {
 
 现在是时候为父级元素添加事件监听了：
 
-```
+```js
 document.addEventListener(“animationstart”, insertionListener, false); // standard + firefox
 document.addEventListener(“MSAnimationStart”, insertionListener, false); // IE
 document.addEventListener(“webkitAnimationStart”, insertionListener, false); // Chrome + Safari

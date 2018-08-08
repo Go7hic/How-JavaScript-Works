@@ -1,6 +1,6 @@
 # JavaScript 是如何工作的: 类和继承以及Babel，TypeScript中的代码转换
 
-![](media/15332846510823/15335261847888.jpg)
+![](https://cdn-images-1.medium.com/max/1600/1*G9cxwM-sZtK-LZjRq7Ii1g.png)
 
 
 #### 概述
@@ -31,7 +31,7 @@ let names = {
 
 #### 使用原型模拟类
 当我们想到对象时，首先想到的是类。 我们都习惯于根据类和它们之间的关系构建我们的应用程序。 虽然JavaScript中的对象无处不在，但该语言不使用经典的基于类的继承。 相反，它依赖于原型。
-![](media/15332846510823/15335387142732.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*SufKRGfPZIDlw1OG)
 
 我们将从一个为基类定义构造函数的简单示例开始：
 ```js
@@ -45,7 +45,7 @@ Component.prototype.render = function() {
 ```
 
 我们将render函数附加到原型，因为我们希望Component类的每个实例都能够找到它。 在Component类的任何实例上调用此方法时，首先将在实例本身中执行搜索。 然后将在原型中执行搜索，这将是找到渲染方法的位置。
-![](media/15332846510823/15335391738269.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*hZbijxS0vXu8vUmz)
 
 所以现在让我们尝试扩展组件类。 我们将介绍一个新的子类。
 ```js
@@ -59,7 +59,7 @@ function InputField(value) {
 InputField.prototype = Object.create(new Component());
 ```
 这样，render方法可以在Component类的原型中找到。 为了获得继承，我们需要将InputField的原型连接到Component类的实例。 大多数库使用Object.setPrototypeOf方法来执行此操作。
-![](media/15332846510823/15335392828805.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*avLiOV_zXLxOgBee)
 
 然而，这不是我们唯一需要做的事情。每次我们扩展课程时，我们都需要：
 
@@ -71,7 +71,7 @@ InputField.prototype = Object.create(new Component());
 
 #### 转换class
 当提出ES6或ECMAScript 2015中的新功能时，JavaScript开发人员社区不能等待所有引擎和浏览器开始支持它们。 实现这一目标的一个好方法是通过转换。 它允许将ECMAScript 2015中编写的一段代码转换为任何浏览器都能理解的JavaScript。 这包括使用基于类的继承编写类的能力，并将它们转换为工作代码。
-![](media/15332846510823/15335394406441.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*QhRSzkngh6Aty-nD)
 最受欢迎的JavaScript转换器是Babel。 让我们看看如何通过在我们上面讨论的组件类的类定义上运行它来进行转换：
 ```js
 class Component {
@@ -156,7 +156,7 @@ class Component {
 }
 ```
 
-![](media/15332846510823/15335446664376.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*-OqUfzpRtgDJQjXY)
 
 在创建抽象语法树之后，将每个节点转换为其等效的ECMAScript 5节点，并返回到遵循ECMAScript 5标准的代码。 这是通过一个进程完成的，该进程找到离根节点最远的节点并将它们转换为代码。 然后，通过使用已为每个子项生成的片段将其父节点转换为代码，依此类推。 此过程称为深度优先遍历。
 
@@ -174,7 +174,7 @@ class Component {
     }
 }
 ```
-![](media/15332846510823/15335449597070.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*j3zkSjnrL4fnCK3A)
 
 它还支持继承。
 ```js
@@ -206,11 +206,11 @@ var InputField = /** @class */ (function (_super) {
 
 2014年，Chrome中引入了对课程的原生支持。这允许在不需要任何库或转换器的情况下执行类声明语法。
 
-![](media/15332846510823/15335452419227.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*jJuHfRMipW8PPcb0)
 
 本机实现类的过程就是我们所说的语法糖。这只是一种奇特的语法，可以编译为语言中已经支持的相同原语。您可以使用新的易于使用的类定义，但它仍将导致创建构造函数和分配原型。
 
-![](media/15332846510823/15335453040418.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*c2HpOiUYMimMXHv2)
 
 #### V8 Support
 

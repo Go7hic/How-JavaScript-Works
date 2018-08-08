@@ -312,7 +312,7 @@ Chrome，Firefox 和 Opera 的浏览器支持非常好。
 
 ![](https://cdn-images-1.medium.com/max/800/0*h2Z_BnDiWfVhgcEZ.)
 
-#### 资源
+#### 参考
 
 *   [https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript](https://developers.google.com/web/fundamentals/design-and-ux/animations/css-vs-javascript)
 *   [https://developers.google.com/web/fundamentals/design-and-ux/animations/](https://developers.google.com/web/fundamentals/design-and-ux/animations/)

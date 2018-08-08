@@ -32,7 +32,7 @@ Service Worker 的生命周期与你的网页是完全分开的，它由以下�
 
 通过注册 Service Worker，你可以告诉浏览器你的 Service Worker 的 JavaScript 文件在哪里。我们来看下面的代码：
 
-```
+```js
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', function() {
     navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -87,7 +87,7 @@ if ('serviceWorker' in navigator) {
 
 在 Service Worker 内部的一个简单装置可能会看起来像这样：
 
-```
+```js
 var CACHE_NAME = 'my-web-app-cache';
 var urlsToCache = [
   '/',
@@ -120,7 +120,7 @@ self.addEventListener('install', function(event) {
 
 在安装 Service Worker 后，用户进入了新的页面，或者刷新当前页面后，Service Worker 将收到 fetch 事件。 下面是一个演示如何返回缓存资源，或发送新请求后缓存结果的示例：
 
-```
+```js
 self.addEventListener('fetch', function(event) {
   event.respondWith(
     // This method looks at the request and
@@ -197,7 +197,7 @@ self.addEventListener('fetch', function(event) {
 
 这里提供了一个如何从缓存中删除一些不在白名单中的文件的例子（在本例中，有 `page-1`、`page-2` 两个实体）：
 
-```
+```js
 self.addEventListener('activate', function(event) {
 
   var cacheWhitelist = ['page-1', 'page-2'];

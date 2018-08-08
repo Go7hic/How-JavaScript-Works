@@ -70,7 +70,7 @@ double m; // 8 bytes
 
 遗憾的是，当我们不知道编译时变量需要多少内存时，事情变得不再简单。假设我们想要做如下的事情：
 
-```
+```js
 int n = readInput(); // reads input from the user
 ...
 // create an array with "n" elements
@@ -92,7 +92,7 @@ int n = readInput(); // reads input from the user
 
 JavaScript 减轻了开发人员处理内存分配的责任 - JavaScript自己执行了内存分配，同时声明了值。
 
-```
+```js
 var n = 374; // allocates memory for a number
 var s = 'sessionstack'; // allocates memory for a string 
 var o = {
@@ -112,7 +112,7 @@ someElement.addEventListener('click', function() {
 
 一些函数调用也会导致对象分配：
 
-```
+```js
 var d = new Date(); // allocates a Date object
 
 var e = document.createElement('div'); // allocates a DOM element
@@ -120,7 +120,7 @@ var e = document.createElement('div'); // allocates a DOM element
 
 方法可以分配新的值或对象：
 
-```
+```js
 var s1 = 'sessionstack';
 var s2 = s1.substr(0, 3); // s2 is a new string
 // Since strings are immutable, 
@@ -171,7 +171,7 @@ var a3 = a1.concat(a2);
 
 请看下面的代码:
 
-```
+```js
 var o1 = {
   o2: {
     x: 1
@@ -208,7 +208,7 @@ o4 = null; // what was the 'o2' property of the object originally in
 
 在周期循环中有一个限制。在下面的例子中，两个对象被创建并相互引用，这就创建了一个循环。在函数调用之后，它们会超出界限，所以它们实际上是无用的，并且可以被释放。然而，引用计数算法认为，由于两个对象中的每一个都被至少引用了一次，所以两者都不能被垃圾收集。
 
-```
+```js
 function f() {
   var o1 = {};
   var o2 = {};
@@ -275,7 +275,7 @@ f();
 
 JavaScript 用一种有趣的方式处理未声明的变量：当引用一个未声明的变量时，在 _global_ 对象中创建一个新变量。在浏览器中，全局对象将是 `window`，这意味着
 
-```
+```js
 function foo(arg) {
     bar = "some text";
 }
@@ -283,7 +283,7 @@ function foo(arg) {
 
 等同于:
 
-```
+```js
 function foo(arg) {
     window.bar = "some text";
 }
@@ -293,7 +293,7 @@ function foo(arg) {
 
 你也可以用 `this` 意外地创建一个全局变量：
 
-```
+```js
 function foo() {
     this.var1 = "potential accidental global";
 }
@@ -312,7 +312,7 @@ foo();
 
 提供观察者和其他接受回调的工具库通常确保所有对回调的引用在其实例无法访问时也变得无法访问。然而，下面的代码并不鲜见：
 
-```
+```js
 var serverData = loadData();
 setInterval(function() {
     var renderer = document.getElementById('renderer');
@@ -332,7 +332,7 @@ setInterval(function() {
 
 但是，尽管如此，一旦对象变得过时，移除观察者才是符合最佳实践的。看下面的例子：
 
-```
+```js
 var element = document.getElementById('launch-button');
 var counter = 0;
 function onClick(event) {
@@ -355,7 +355,7 @@ element.parentNode.removeChild(element);
 
 JavaScript开发的一个关键方面是闭包：一个内部函数可以访问外部（封闭）函数的变量。由于JavaScript运行时的实现细节，可能以如下方式泄漏内存：
 
-```
+```js
 var theThing = null;
 var replaceThing = function () {
   var originalThing = theThing;
@@ -387,7 +387,7 @@ Meteor 团队发现了这个问题，[它们有一篇很棒的文章](https://bl
 
 有些情况下开发人员在数据结构中存储 DOM 节点。假设你想快速更新表格中几行的内容。如果在字典或数组中存储对每个 DOM 行的引用，就会产生两个对同一个 DOM 元素的引用：一个在 DOM 树中，另一个在字典中。如果你决定删除这些行，你需要记住让两个引用都无法访问。
 
-```
+```js
 var elements = {
     button: document.getElementById('button'),
     image: document.getElementById('image')
@@ -418,7 +418,7 @@ function removeImage() {
 
 ![](https://cdn-images-1.medium.com/max/800/1*kEQmoMuNBDfZKNSBh0tvRA.png)
 
-#### Resources
+#### 参考
 
 * [http://www-bcf.usc.edu/~dkempe/CS104/08-29.pdf](http://www-bcf.usc.edu/~dkempe/CS104/08-29.pdf)
 * [https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156](https://blog.meteor.com/an-interesting-kind-of-javascript-memory-leak-8b47d2e7f156)

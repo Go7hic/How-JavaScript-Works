@@ -30,10 +30,10 @@
 
 #### 对比（Comparison）
 在本节中，我们将了解Web开发人员可用的当前API，并在上述维度中进行比较。
-![QQ20180802-173415@2x](media/15330324473461/QQ20180802-173415@2x.png)
+![](https://ws3.sinaimg.cn/large/0069RVTdgy1fu2bggt1i7j31kw0be0vl.jpg)
 
 #### File system API
-![](media/15330324473461/15332024951097.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*9KPehy4mUb8f-hSp)
 
 使用FileSystem API，Web应用程序可以创建，读取，导航和写入用户本地文件系统的沙盒部分。
 
@@ -70,7 +70,7 @@ window.requestFileSystem(type, size, successCallback, opt_errorCallback)
 - Offline Web Mail Client 脱机Web邮件客户端 - 下载附件并在本地存储它们。
 
 这是API当前的浏览器支持：
-![](media/15330324473461/15332796218815.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*ndU4N8xQF6QEQmSY)
 
 
 #### Local storage
@@ -79,7 +79,7 @@ window.requestFileSystem(type, size, successCallback, opt_errorCallback)
 请注意，存储在localStorage或sessionStorage中的数据特定于页面的来源，它是协议，主机和端口的组合。
 
 这是API当前的浏览器支持：
-![](media/15330324473461/15332797536653.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*AsoHzlowoLItnUEL)
 
 #### Session storage
 
@@ -88,10 +88,10 @@ sessionStorage属性允许您访问当前源的会话存储对象。 sessionStor
 请注意，存储在sessionStorage或localStorage中的数据特定于页面的来源。
 
 这是API当前的浏览器支持：
-![](media/15330324473461/15332804898914.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*hxC_NUPNycUBhj-L)
 
 #### Cookies
-![](media/15330324473461/15332805365514.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*PTDs1BkbMgekizit)
 Cookie（Web Cookie，浏览器Cookie）是用户服务器发送到用户Web浏览器的一小段数据。 浏览器可以存储它并将其与下一个请求一起发送回同一服务器。 通常，它用于判断两个请求是否来自同一个浏览器 - 例如，保持用户登录。 它记住无状态HTTP协议的有状态信息。
 
 Cookie有三个主要用例：
@@ -113,7 +113,7 @@ Cookie曾经用于一般客户端存储。 虽然这是在客户端上存储数�
 而且，正如您可能已经猜到的，Cookie在所有浏览器中得到广泛支持。
 
 #### Cache
-![](media/15330324473461/15332810248912.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*XZ2U-ztABhWJOSky)
 Cache接口为缓存的Request / Response对象对提供存储机制。请注意，Cache接口会暴露给窗口范围以及工作者。您不必将它与服务工作者一起使用，即使它是在服务工作者规范中定义的。
 
 原点可以有多个名为Cache的对象。您负责实现脚本（例如，在ServiceWorker中）处理缓存更新的方式。除非明确请求，否则缓存中的项目不会更新;除非删除，否则它们不会过期。使用CacheStorage.open（）打开一个特定的，名为Cache的对象，然后调用任何Cache方法来维护Cache。
@@ -121,7 +121,7 @@ Cache接口为缓存的Request / Response对象对提供存储机制。请注意
 您还负责定期清除缓存条目。每个浏览器都对给定源可以使用的缓存存储量有硬性限制。缓存配额使用估算值可通过StorageEstimate API获得。浏览器尽最大努力管理磁盘空间，但它可能会删除源的缓存存储。浏览器通常会删除原点的所有数据或不删除任何数据。确保按名称安装版本缓存，并仅从可以安全操作的脚本版本中使用缓存。有关更多信息，请参阅删除旧缓存。
 
 #### IndexedDB
-![](media/15330324473461/15332818970205.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*HP66Xm7oe9u8Ofk1)
 IndexedDB是一种在用户浏览器中持久存储数据的方法。 因为它允许您创建具有丰富查询能力的Web应用程序，而不管网络可用性如何，这些应用程序可以在线和离线工作。 IndexedDB对于存储大量数据的应用程序（例如，借阅库中的DVD目录）和不需要持久Internet连接的应用程序（例如，邮件客户端，待办事项列表和记事本）。
 
 在本文中，我们将更详细地讨论存储数据库，因为其余的存储API非常有名。 此外，随着现在Web应用程序复杂性的增加，IndexedDB越来越受欢迎。
@@ -157,7 +157,7 @@ IndexedDB旨在涵盖大多数需要客户端存储的情况。 但是，对于�
 
 
 确切的环境和浏览器功能会随着时间而变化，但浏览器供应商的一般理念是尽可能地保留数据。
-![](media/15330324473461/15332834455396.jpg)
+![](https://cdn-images-1.medium.com/max/1600/0*kGDQYE70_z58D7na)
 
 #### 选择正确的存储API
 正如我已经提到的，最好选择尽可能多的浏览器广泛支持的API，并提供异步调用模型，以最大限度地提高UI响应能力。这些标准自然导致以下技术选择：
