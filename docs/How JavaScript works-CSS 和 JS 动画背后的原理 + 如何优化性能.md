@@ -2,21 +2,6 @@
 
 这是专门探索 JavaScript 及其构建组件系列的第 13 篇文章。在识别和描述核心元素的过程中，我们还分享了构建 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=blog&utm_content=js-series-networking-layer-intro) 时的一些经验法则，SessionStack 是一个足够强大且高性能的 JavaScript 应用程序，用来帮助用户实时查看和重现其 Web 应用程序的缺陷。
 
-如果你错过了前面的章节，你可以在这里找到它们：
-
-1. [[译] JavaScript 是如何工作的：对引擎、运行时、调用堆栈的概述](https://juejin.im/post/5a05b4576fb9a04519690d42)
-2. [[译] JavaScript 是如何工作的：在 V8 引擎里 5 个优化代码的技巧](https://juejin.im/post/5a102e656fb9a044fd1158c6)
-3. [[译] JavaScript 是如何工作的：内存管理 + 处理常见的4种内存泄漏](https://juejin.im/post/5a2559ae6fb9a044fe4634ba)
-4. [[译] JavaScript 是如何工作的: 事件循环和异步编程的崛起 + 5个如何更好的使用 async/await 编码的技巧](https://juejin.im/post/5a221d35f265da43356291cc)
-5. [[译] JavaScript 是如何工作的：深入剖析 WebSockets 和拥有 SSE 技术 的 HTTP/2，以及如何在二者中做出正确的选择](https://juejin.im/post/5a522647518825732d7f6cbb)
-6. [[译] JavaScript 是如何工作的：与 WebAssembly 一较高下 + 为何 WebAssembly 在某些情况下比 JavaScript 更为适用](https://github.com/xitu/gold-miner/blob/master/TODO1/how-javascript-works-a-comparison-with-webassembly-why-in-certain-cases-its-better-to-use-it.md)
-7. [[译] JavaScript 是如何工作的：Web Worker 的内部构造以及 5 种你应当使用它的场景](https://juejin.im/post/5a90233bf265da4e92683de3)
-8. [[译] JavaScript 是如何工作的：Web Worker 生命周期及用例](https://github.com/xitu/gold-miner/blob/master/TODO1/how-javascript-works-service-workers-their-life-cycle-and-use-cases.md)
-9. [[译] JavaScript 是如何工作的：Web 推送通知的机制](https://github.com/xitu/gold-miner/blob/master/TODO1/how-javascript-works-the-mechanics-of-web-push-notifications.md)
-10. [[译] JavaScript 是如何工作的：用 MutationObserver 追踪 DOM 的变化](https://juejin.im/post/5aee720df265da0b8f627173)
-11. [[译] JavaScript 是如何工作的：渲染引擎和性能优化技巧](https://github.com/xitu/gold-miner/blob/master/TODO1/how-javascript-works-the-rendering-engine-and-tips-to-optimize-its-performance.md)
-12. [[译] JavaScript 是如何工作的：网络层内部 + 如何优化其性能和安全性](https://github.com/xitu/gold-miner/blob/master/TODO1/how-javascript-works-inside-the-networking-layer-how-to-optimize-its-performance-and-security.md)
-
 ### 概览
 
 你也知道，动画在创造吸引人的 web app 中扮演着重要的角色。随着用户越来越多地将注意力转移到用户体验上，商家也开始意识到完美、愉悦的用户体验的重要性，web app 变得更加重要，并且 UI 更趋于动效。这一切都需要更复杂的动画，以便在用户使用中实现更平滑的状态转换。今天，这甚至不被认为是特别的。用户正在变得越来越挑剔，默认期望高效响应和互动的用户界面。

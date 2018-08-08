@@ -2,12 +2,6 @@
 
 欢迎来到旨在探索 JavaScript 以及它的核心元素的系列文章的第四篇。在认识、描述这些核心元素的过程中，我们也会分享一些当我们构建 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=blog&utm_content=Post-4-eventloop-intro) 的时候遵守的一些经验规则，一个 JavaScript 应用应该保持健壮和高性能来维持竞争力。
 
-如果你错过了前三章可以在这儿找到它们:
-
-1.  [对引擎、运行时和调用栈的概述](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf?source=collection_home---2------1----------------)
-2.  [深入 V8 引擎以及 5 个写出更优代码的技巧](https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e?source=collection_home---2------2----------------)
-3.  [内存管理以及四种常见的内存泄漏的解决方法](https://blog.sessionstack.com/how-javascript-works-memory-management-how-to-handle-4-common-memory-leaks-3f28b94cfbec?source=collection_home---2------0----------------)
-
 这次我们将展开第一篇文章的内容，回顾一下在单线程环境中编程的缺点，以及如何克服它们来构建出色的 JavaScript UI。按照惯例，在文章的末尾我们将分享 5 个如何使用 async/await 写出更简洁的代码的技巧。
 
 #### **为什么单线程会限制我们？**

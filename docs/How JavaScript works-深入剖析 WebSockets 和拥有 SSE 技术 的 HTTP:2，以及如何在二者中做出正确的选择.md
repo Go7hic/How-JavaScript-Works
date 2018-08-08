@@ -2,13 +2,6 @@
 
 欢迎来到旨在探索 JavaScript 以及它的核心元素的系列文章的第五篇。在认识、描述这些核心元素的过程中，我们也会分享一些当我们构建 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=blog&utm_content=Post-4-eventloop-intro) 的时候遵守的一些经验规则，这是一个轻量级的 JavaScript 应用，其具备的健壮性和高性能让它在市场中保有一席之地。
 
-如果你错过了前面的文章，你可以在这儿找到它们：
-
-1.  [对引擎、运行时和调用栈的概述](https://juejin.im/post/5a05b4576fb9a04519690d42)
-2.  [深入 V8 引擎以及 5 个写出更优代码的技巧](https://juejin.im/post/5a102e656fb9a044fd1158c6)
-3.  [内存管理以及四种常见的内存泄漏的解决方法](https://juejin.im/post/59ca19ca6fb9a00a42477f55)
-4.  [事件循环和异步编程的崛起以及 5 个如何更好的使用 async/await 编码的技巧](https://juejin.im/post/5a221d35f265da43356291cc)
-
 这一次，我们将深入到通信协议中，去讨论和对比 WebSockets 和 HTTP/2 的属性和构成。我们将快速比较 WebSockets 和 HTTP/2，并在最后，针对网络协议，分享一些如何选择这2种技术的想法。
 
 #### 简介

@@ -2,7 +2,6 @@
 
 几周前，我们开始了一系列旨在深入挖掘 JavaScript 及其工作原理的研究。我们的初衷是：通过了解 JavaScript 代码块的构建以及它们之间协调工作的原理，我们将能够编写更好的代码和应用程序。
 
-本系列的第一篇文章着重于提供[引擎概览, 运行时, 以及堆栈调用](https://blog.sessionstack.com/how-does-javascript-actually-work-part-1-b0bacc073cf)。第二篇文章仔细审查了 [Google 的 V8 JavaScript 引擎的内部区块](https://blog.sessionstack.com/how-javascript-works-inside-the-v8-engine-5-tips-on-how-to-write-optimized-code-ac089e62b12e)并且提供了一些关于怎样编写更好 JavaScript 代码的建议。
 
 在第三篇文章中, 我们将讨论另外一个越来越被开发人员忽视的主题，原因是应用于日常基础内存管理的程序语言越来越成熟和复杂。我们也将会在 [SessionStack](https://www.sessionstack.com/?utm_source=medium&utm_medium=blog&utm_content=Post-3-v8-intro) 提供一些关于如何处理 JavaScript 内存泄漏的建议，我们需要确认 SessionStack 不会导致内存泄漏，或者不会增加我们集成的 web 应用程序的消耗。
 

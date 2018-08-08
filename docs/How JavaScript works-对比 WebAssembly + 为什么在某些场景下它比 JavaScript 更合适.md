@@ -2,12 +2,6 @@
 
 这是专门探索 JavaScript 及其构建组件系列的第 6 期。在识别和描述核心元素的过程中，我们还分享了构建 SessionStack 时使用的一些经验法则 —— 这是一个轻量级的 JavaScript 应用程序，但必须强大且性能卓越，才能帮助用户实时查看和重现其 Web 应用的缺陷。
 
-1. [[译] JavaScript 是如何工作的：对引擎、运行时、调用堆栈的概述](https://juejin.im/post/5a05b4576fb9a04519690d42)
-2. [[译] JavaScript 是如何工作的：在 V8 引擎里 5 个优化代码的技巧](https://juejin.im/post/5a102e656fb9a044fd1158c6)
-3. [[译] JavaScript 是如何工作的：内存管理 + 处理常见的4种内存泄漏](https://juejin.im/post/5a2559ae6fb9a044fe4634ba)
-4. [[译] JavaScript 是如何工作的: 事件循环和异步编程的崛起 + 5个如何更好的使用 async/await 编码的技巧](https://juejin.im/post/5a221d35f265da43356291cc)
-5. [[译] JavaScript 是如何工作的：深入剖析 WebSockets 和拥有 SSE 技术 的 HTTP/2，以及如何在二者中做出正确的选择](https://juejin.im/post/5a522647518825732d7f6cbb)
-
 这次我们将剖析 WebAssembly 的工作原理，更重要的是在性能方面分析它与 JavaScript 的差异：加载时间、执行速度、垃圾回收、内存使用情况、平台 API 调用、调试、多线程和可移植性。
 
 我们构建 Web 应用程序的方式正处于革命的边缘 —— 仍然是初级阶段，但我们对 Web 应用程序的看法正在发生变化。
