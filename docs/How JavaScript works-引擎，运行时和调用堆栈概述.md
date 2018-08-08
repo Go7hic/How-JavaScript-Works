@@ -1,14 +1,17 @@
 # JavaScript 是如何工作的：引擎，运行时和调用堆栈概述
 
-  随着JavaScript越来越流行，越来越多的团队广泛的把JavaScript应用到前端、后台、hybrid 应用、嵌入式等等领域。
-  这篇文章旨在深入挖掘JavaScript，以及向大家解释JavaScript是如何工作的。我们通过了解它的底层构建以及它是怎么发挥作用的，可以帮助我们写出更好的代码与应用。据 GitHub 统计显示，JavaScript 长期占据GitHub 中 Active Repositories 和 Total Pushes 的榜首，并且在其他的类别中也不会落后太多。
+随着JavaScript越来越流行，越来越多的团队广泛的把JavaScript应用到前端、后台、hybrid 应用、嵌入式等等领域。
+
+这篇文章旨在深入挖掘JavaScript，以及向大家解释JavaScript是如何工作的。我们通过了解它的底层构建以及它是怎么发挥作用的，可以帮助我们写出更好的代码与应用。据 GitHub 统计显示，JavaScript 长期占据GitHub 中 Active Repositories 和 Total Pushes 的榜首，并且在其他的类别中也不会落后太多。
 ![](https://ws1.sinaimg.cn/large/0069RVTdgy1fu23fvoi1pj31660lfwlr.jpg)
 
-  如果一个项目越来越依赖 JavaScript，这就意味着开发人员必须利用这些语言和生态系统提供更深层次的核心内容去构建一个令人振奋的应用。然而，事实证明，有很多的开发者每天都在使用 JavaScript，但是却不知道在底层 JavaScript 是怎么运作的。
+如果一个项目越来越依赖 JavaScript，这就意味着开发人员必须利用这些语言和生态系统提供更深层次的核心内容去构建一个令人振奋的应用。然而，事实证明，有很多的开发者每天都在使用 JavaScript，但是却不知道在底层 JavaScript 是怎么运作的。
   
 #### 概述
+
 几乎每个人听说过 V8 引擎的概念，而且，大多数人都知道 JavaScript 是单线程的，或者是它是使用回调队列的。
-  在这篇文章中，我们将详细的介绍这些概念，并解释 JavaScript 是怎么工作的。通过了解这些细节，你就能利用这些提供的 API 来写出更好的，非阻塞的应用来。如果你对 JavaScript 比较陌生，那么这篇文章将帮助您理解为什么 JavaScript 相较于其他语言显得如此“怪异”。如果您是一位经验丰富的 JavaScript 开发人员，希望它能给你带来一些新的见解，说明 JavaScript 的运行时，尽管你可能每天都会用到它。
+
+在这篇文章中，我们将详细的介绍这些概念，并解释 JavaScript 是怎么工作的。通过了解这些细节，你就能利用这些提供的 API 来写出更好的，非阻塞的应用来。如果你对 JavaScript 比较陌生，那么这篇文章将帮助您理解为什么 JavaScript 相较于其他语言显得如此“怪异”。如果您是一位经验丰富的 JavaScript 开发人员，希望它能给你带来一些新的见解，说明 JavaScript 的运行时，尽管你可能每天都会用到它。
 
 #### JavaScript 引擎
 JavaScript 引擎说起来最流行的当然是谷歌的 V8 引擎了， V8 引擎使用在 Chrome 以及 Node 中，下面有个简单的图能说明他们的关系
