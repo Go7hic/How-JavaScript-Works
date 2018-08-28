@@ -1,6 +1,6 @@
 # How-JavaScript-Works
 
-> 本仓库是翻译 JavaScript 如何工作系列的文章，目前作者还在更新中，我会持续关注翻译更新，原文见这里https://blog.sessionstack.com/tagged/tutorial。
+> 本仓库是翻译 JavaScript 如何工作系列的文章，目前作者还在更新中，我会持续关注翻译更新，原文见这里https://blog.sessionstack.com/tagged/tutorial
 
 ### 文章列表：
 - 1. [JavaScript 是如何工作的：引擎，运行时和调用堆栈概述](https://github.com/fe-doc/How-JavaScript-Works/blob/master/docs/How%20JavaScript%20works-%E5%BC%95%E6%93%8E%EF%BC%8C%E8%BF%90%E8%A1%8C%E6%97%B6%E5%92%8C%E8%B0%83%E7%94%A8%E5%A0%86%E6%A0%88%E6%A6%82%E8%BF%B0.md)
